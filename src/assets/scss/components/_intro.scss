@@ -1,0 +1,35 @@
+
+.intro {
+   &__header {
+      text-align: center;
+      font-weight: 700;
+   }
+}
+
+.slide {
+   background: black;
+   height: 50vh;
+   width: 100%;
+   img {
+      width: 100%;
+      max-width: 400px;
+   }  
+}
+
+
+.loader {
+   position: relative;
+   width: 25%;
+   height: 3px;
+   background: gray;
+
+   &__fill {
+      background: white;
+      height: 100%;
+      width: 0%;
+      transition: width 2s ease-in;
+      position: absolute;
+      top: 0;
+      left: 0;
+   }
+}

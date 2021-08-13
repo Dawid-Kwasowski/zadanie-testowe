@@ -1,3 +1,13 @@
+@import './components/intro';
 * {
    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+.container-fluid {
+   padding: 0;
+   overflow: hidden;
+   color: white;
+   font-family: serif;
 }
