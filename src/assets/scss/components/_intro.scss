@@ -1,4 +1,3 @@
-
 .intro {
    &__header {
       text-align: center;
@@ -7,7 +6,7 @@
 }
 
 .slide {
-   background: black;
+   background: $black;
    height: 50vh;
    width: 100%;
    img {
@@ -16,15 +15,14 @@
    }  
 }
 
-
 .loader {
    position: relative;
-   width: 25%;
+   width: 100%;
    height: 3px;
-   background: gray;
+   background: darken($color: $white, $amount: 70);
 
    &__fill {
-      background: white;
+      background: $white;
       height: 100%;
       width: 0%;
       transition: width 2s ease-in;
