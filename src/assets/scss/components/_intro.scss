@@ -1,4 +1,10 @@
+$top: 'top';
+$bottom: 'bottom';
+
 .intro {
+   position: absolute;
+   color: white;
+   width: 100%;
    &__header {
       text-align: center;
       font-weight: 700;
@@ -12,7 +18,18 @@
    img {
       width: 100%;
       max-width: 400px;
-   }  
+   }
+   
+   &-#{$top}{
+      &--hide {
+         @include slideTo($top);
+      }
+   }
+   &-#{$bottom}{
+      &--hide {
+         @include slideTo($bottom);
+      }
+   }
 }
 
 .loader {

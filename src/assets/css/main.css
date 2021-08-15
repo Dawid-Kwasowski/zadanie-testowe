@@ -1,3 +1,9 @@
+.intro {
+  position: absolute;
+  color: white;
+  width: 100%;
+}
+
 .intro__header {
   text-align: center;
   font-weight: 700;
@@ -12,6 +18,68 @@
 .slide img {
   width: 100%;
   max-width: 400px;
+}
+
+.slide-top--hide {
+  -webkit-animation: "top" 0.5s ease-in forwards;
+          animation: "top" 0.5s ease-in forwards;
+}
+
+@-webkit-keyframes top {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes top {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.slide-bottom--hide {
+  -webkit-animation: "bottom" 0.5s ease-in forwards;
+          animation: "bottom" 0.5s ease-in forwards;
+}
+
+@-webkit-keyframes bottom {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes bottom {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
 }
 
 .loader {
@@ -41,8 +109,8 @@
 
 .container-fluid {
   padding: 0;
+  height: 100vh;
   overflow: hidden;
-  color: white;
   font-family: serif;
 }
 /*# sourceMappingURL=main.css.map */
