@@ -5,9 +5,16 @@ $black: hsl(0, 17%, 2%);
 // text
 $white: hsl(0, 10%, 82%);
 
+// measurement
+$panel-height: 80px;
+$panel-width: 100%;
+
 // mixins
-@mixin slideTo($direction) {
-   animation: $direction .5s ease-in forwards;
+@mixin slideTo(
+   $direction: 'top',
+   $delay: 0s,
+   ) {
+   animation: $direction .5s $delay ease-in forwards;
 
    @keyframes #{$direction} {
       // set value which depends from direction that slide should go
@@ -15,9 +22,10 @@ $white: hsl(0, 10%, 82%);
       @if $direction == 'top' {
          $value: -100%;
       }
-      @else {
+      @else if $direction == 'bottom' {
          $value: 100%;
       }
+
       from {
          transform: translateY(0);
          opacity: 1;
@@ -27,5 +35,13 @@ $white: hsl(0, 10%, 82%);
          opacity: 0;
       }
    }
+}
 
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
 }

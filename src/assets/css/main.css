@@ -1,12 +1,25 @@
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .intro {
   position: absolute;
   color: white;
   width: 100%;
-}
-
-.intro__header {
-  text-align: center;
-  font-weight: 700;
 }
 
 .slide {
@@ -21,8 +34,8 @@
 }
 
 .slide-top--hide {
-  -webkit-animation: "top" 0.5s ease-in forwards;
-          animation: "top" 0.5s ease-in forwards;
+  -webkit-animation: "top" 0.5s 0s ease-in forwards;
+          animation: "top" 0.5s 0s ease-in forwards;
 }
 
 @-webkit-keyframes top {
@@ -52,8 +65,8 @@
 }
 
 .slide-bottom--hide {
-  -webkit-animation: "bottom" 0.5s ease-in forwards;
-          animation: "bottom" 0.5s ease-in forwards;
+  -webkit-animation: "bottom" 0.5s 0s ease-in forwards;
+          animation: "bottom" 0.5s 0s ease-in forwards;
 }
 
 @-webkit-keyframes bottom {
@@ -100,11 +113,37 @@
   left: 0;
 }
 
+.top-panel {
+  width: 100%;
+  height: 80px;
+  -webkit-box-shadow: 0px 3px 5px #999;
+          box-shadow: 0px 3px 5px #999;
+  -webkit-animation: fadeIn .5s ease-in 2.5s both;
+          animation: fadeIn .5s ease-in 2.5s both;
+}
+
+.bottom-panel {
+  background: #060404;
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #d6cdcd;
+  -webkit-animation: fadeIn .5s ease-in 2.5s both;
+          animation: fadeIn .5s ease-in 2.5s both;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.header {
+  font-weight: 700;
+  text-align: center;
 }
 
 .container-fluid {

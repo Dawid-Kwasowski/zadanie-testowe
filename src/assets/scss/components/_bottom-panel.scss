@@ -1,0 +1,11 @@
+.bottom-panel {
+   background: $black;
+   height: $panel-height;
+   width: $panel-width;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   color: $white;
+
+   animation: fadeIn .5s ease-in 2.5s both;
+}

@@ -1,7 +1,7 @@
 const slideTo = direction => {
       const slideEl = document.querySelector(`.slide-${direction}`)
       slideEl.classList.add(`slide-${direction}--hide`)
-      console.log(`${direction} has new CSS class`)
+      // console.log(`${direction} has new CSS class`)
 }
 // symulation of loader / progress bar
 export const makeProgress = () => {
@@ -15,4 +15,3 @@ export const makeProgress = () => {
          slideTo('bottom')
       },2100)
 }
-
