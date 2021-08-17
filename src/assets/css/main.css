@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap");
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -6,7 +7,6 @@
     opacity: 1;
   }
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -124,14 +124,93 @@
 
 .bottom-panel {
   background: #060404;
-  height: 80px;
+  min-height: 80px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
+  padding: 10px 0;
   color: #d6cdcd;
   -webkit-animation: fadeIn .5s ease-in 2.5s both;
           animation: fadeIn .5s ease-in 2.5s both;
+}
+
+.bottom-panel__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.bottom-panel__copyright {
+  color: gray;
+  font-size: .5rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin: 0 10px;
+}
+
+.bottom-panel__logo {
+  width: 300px;
+}
+
+.bottom-panel__logo img {
+  width: 90%;
+}
+
+.navigation {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: .6rem;
+}
+
+.navigation__item {
+  margin: 0 10px;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: #d6cdcd;
+}
+
+.player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 15px 0;
+}
+
+.player__icon {
+  width: 30px;
+  margin: 0 25px;
+  cursor: pointer;
+}
+
+.player__tracker {
+  background: #221c1c;
+  height: 6px;
+  width: 200px;
+}
+
+.player__tracker-fill {
+  width: 30%;
+  border-radius: 10px;
+  background: #d6cdcd;
+}
+
+:root {
+  font-size: 16px;
 }
 
 * {
@@ -139,6 +218,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Merriweather', serif;
 }
 
 .header {
@@ -150,6 +230,5 @@
   padding: 0;
   height: 100vh;
   overflow: hidden;
-  font-family: serif;
 }
 /*# sourceMappingURL=main.css.map */

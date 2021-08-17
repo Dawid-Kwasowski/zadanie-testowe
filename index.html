@@ -12,6 +12,7 @@
 
    <div class="container-fluid">
       <div class="row">
+
          <div class="col-12">
             <div class="intro">
                <div class="slide slide-top d-flex flex-column justify-content-end align-items-center">
@@ -28,22 +29,56 @@
                </div>
             </div>       
          </div>
+
          <div class="top-panel d-flex align-items-center justify-content-center">
             <header class="header">
                <h2>Polskie Wybrzeże</h2>
             </header>
-         </div>     
-         <footer class="bottom-panel d-flex justify-content-between">
-            <nav>
-               <a href="#">O wystawie</a> |
-               <a href="#">Kurator</a> |
-               <a href="#">mmm.pl</a> |
-            </nav>
-            <div class="form-group">
-               <input type="range" class="form-control-range" id="formControlRange">
-            </div>
-         <img class="intro__image" src="/src/images/logo.png" alt="Niepodległa">
+         </div>
 
+         <footer class="bottom-panel">
+            <div class="row align-items-center justify-content-center">
+
+               <div class="col-7 col-lg-4 d-flex justify-content-center order-1 order-lg-first">
+                  <nav class="bottom-panel__nav">
+                     <ul class="navigation">
+                        <li class="navigation__item">
+                           <a href="#" class="navigation__link">O Wystawie</a>
+                        </li> |
+                        <li class="navigation__item">
+                           <a href="#" class="navigation__link">Kurator</a>
+                        </li> |
+                        <li class="navigation__item">
+                           <a href="#" class="navigation__link">nmm.pl</a>
+                        </li>
+                     </ul>
+                     <span class="bottom-panel__copyright">
+                        @2021 - Copyright Narodowe Muzeum Morskie w Gdańsku
+                     </span>
+                  </nav>
+               </div>
+
+               <div class="col-12 col-lg-4 d-flex justify-content-center order-first order-lg-1">
+                  <div class="player">
+                     <div class="player__play-pause">
+                        <img class="player__icon player__icon--play-pause" src="./src/images/pause-fill.svg" alt="">
+                     </div>
+                     <div class="progress player__tracker">
+                        <div class="progress-bar player__tracker-fill" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                     </div>
+                     <div class="player__mute">
+                        <img  class="player__icon player__icon--volume" src="./src/images/volume-up-fill.svg" alt="">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="col-5 col-lg-4 d-flex justify-content-center order-last">
+                  <div class="bottom-panel__logo">
+                     <img src="./src/images/logo.png" alt="">
+                  </div>   
+               </div>
+            </div>
+            
          </footer>
       </div>
    </div>

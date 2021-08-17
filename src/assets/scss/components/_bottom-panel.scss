@@ -1,11 +1,68 @@
 .bottom-panel {
    background: $black;
-   height: $panel-height;
+   min-height: $panel-height;
    width: $panel-width;
-   position: absolute;
+   position: fixed;
    bottom: 0;
    left: 0;
+   padding: 10px 0;
    color: $white;
-
    animation: fadeIn .5s ease-in 2.5s both;
+   
+   &__nav {
+      display: flex;
+      flex-direction: column;
+   }
+   &__copyright {
+      color: gray;
+      font-size: .5rem;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      margin: 0 10px;
+   }
+   &__logo {
+      width: 300px;
+
+      img {
+         width: 90%;
+      }
+   }
+}
+
+.navigation {
+   list-style: none;
+   display: flex;
+   font-size: .6rem;
+   &__item {
+      margin: 0 10px;
+   }
+   &__link {
+      
+      text-decoration: none;
+      color: $white;
+   }
+}
+
+.player {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 15px 0;
+   &__icon {
+      width: 30px;
+      margin: 0 25px;
+      cursor: pointer;
+   }
+   &__tracker {
+      background: darken($color: $white, $amount: 70);
+      height: 6px;
+      width: 200px;
+   }
+
+   &__tracker-fill {
+      width: 30%;
+      border-radius: 10px;
+      background: $white;
+   }
+
 }
