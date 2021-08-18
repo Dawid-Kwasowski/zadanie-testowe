@@ -129,6 +129,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 5;
   padding: 10px 0;
   color: #d6cdcd;
   -webkit-animation: fadeIn .5s ease-in 2.5s both;
@@ -200,13 +201,139 @@
 .player__tracker {
   background: #221c1c;
   height: 6px;
-  width: 200px;
+  width: 300px;
 }
 
 .player__tracker-fill {
   width: 30%;
   border-radius: 10px;
   background: #d6cdcd;
+}
+
+.map-box {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 20px 5px;
+  border: 1px solid #060404;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-animation: fadeIn .5s ease-in 2.2s both;
+          animation: fadeIn .5s ease-in 2.2s both;
+  -webkit-transition: -webkit-transform .2s ease-in;
+  transition: -webkit-transform .2s ease-in;
+  transition: transform .2s ease-in;
+  transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+}
+
+@media (max-width: 1024px) {
+  .map-box {
+    position: absolute;
+    width: 300px;
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+  .map-box:nth-child(1) {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  .map-box:nth-child(2) {
+    z-index: 5;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  .map-box:nth-child(3) {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+.map-box img {
+  width: 90%;
+  margin: 10px;
+  -webkit-filter: grayscale(90%) sepia(30%) blur(1px);
+          filter: grayscale(90%) sepia(30%) blur(1px);
+}
+
+.map-box__date {
+  background: #fff;
+  width: 150px;
+  height: auto;
+  text-align: center;
+  position: absolute;
+  -webkit-transition: -webkit-transform .2s ease-in;
+  transition: -webkit-transform .2s ease-in;
+  transition: transform .2s ease-in;
+  transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+}
+
+@media (max-width: 1024px) {
+  .map-box__date {
+    -webkit-transform: translate(75%, -125px) scale(0.5);
+            transform: translate(75%, -125px) scale(0.5);
+  }
+}
+
+.map-box__date h2 {
+  font-weight: 700;
+}
+
+.map-box:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  position: relative;
+  z-index: 2;
+}
+
+.map-box:hover .map-box__date {
+  -webkit-transform: translateY(-150px) scale(0.5);
+          transform: translateY(-150px) scale(0.5);
+}
+
+@media (max-width: 1024px) {
+  .map-box:hover .map-box__date {
+    -webkit-transform: translateY(-100px) scale(0.5);
+            transform: translateY(-100px) scale(0.5);
+  }
+}
+
+.map-box:hover img {
+  -webkit-filter: blur(0px) sepia(30%) grayscale(90%);
+          filter: blur(0px) sepia(30%) grayscale(90%);
+}
+
+.map-box--active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  position: relative;
+  z-index: 2;
+}
+
+.map-box--active .map-box__date {
+  -webkit-transform: translateY(-150px) scale(0.5);
+          transform: translateY(-150px) scale(0.5);
+}
+
+@media (max-width: 1024px) {
+  .map-box--active .map-box__date {
+    -webkit-transform: translateY(-100px) scale(0.5);
+            transform: translateY(-100px) scale(0.5);
+  }
+}
+
+.map-box--active img {
+  -webkit-filter: blur(0px) sepia(30%) grayscale(90%);
+          filter: blur(0px) sepia(30%) grayscale(90%);
 }
 
 :root {

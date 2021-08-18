@@ -12,9 +12,10 @@
 
    <div class="container-fluid">
       <div class="row">
-
+         <!-- Introduction and Loader -->
          <div class="col-12">
             <div class="intro">
+               <!-- slide to top -->
                <div class="slide slide-top d-flex flex-column justify-content-end align-items-center">
                   <header class="header">
                      <h2>Polskie Wybrzeże</h2>
@@ -24,18 +25,24 @@
                      </div>
                   </header>
                </div>
+               <!-- slide to bottom -->
                <div class="slide slide-bottom d-flex flex-column justify-content-start align-items-center">
                   <img class="intro__image" src="/src/images/logo.png" alt="Niepodległa">
                </div>
             </div>       
          </div>
-
+         <!-- TOP PANEL -->
          <div class="top-panel d-flex align-items-center justify-content-center">
             <header class="header">
                <h2>Polskie Wybrzeże</h2>
             </header>
          </div>
-
+         <div class="container">
+            <div class="maps-container row justify-content-center mt-5">
+               <!-- maps template is here -->
+            </div>
+         </div>
+         <!-- BOTTOM PANEL -->
          <footer class="bottom-panel">
             <div class="row align-items-center justify-content-center">
 
@@ -82,6 +89,32 @@
          </footer>
       </div>
    </div>
+   <!-- TEMPLATES -->
+
+   <!-- template with map -->
+   <template class="maps-temp">
+      <div class="map-box col-lg-4 col-sm-12">
+         <img src="./src/images/puck.png" alt="">
+         <div class="map-box__date">
+            <span>ROK</span>
+            <h2 class="map-box__date-year"></h2>
+         </div>
+      </div>
+      <div class="map-box col-lg-4 col-sm-12">
+         <img src="./src/images/puck.png" alt="">
+         <div class="map-box__date">
+            <span>ROK</span>
+            <h2 class="map-box__date-year"></h2>
+         </div>
+      </div>
+      <div class="map-box col-lg-4 col-sm-12">
+         <img src="./src/images/puck.png" alt="">
+         <div class="map-box__date">
+            <span>ROK</span>
+            <h2 class="map-box__date-year"></h2>
+         </div>
+      </div>
+   </template>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <!-- <script src="https://code.jquery.com/ui/1.13.0-alpha.1/jquery-ui.min.js" integrity="sha256-ahTP8JLHwIplWgufAohh+E04ayoLEUBEwcH04eUmIdA=" crossorigin="anonymous"></script> -->

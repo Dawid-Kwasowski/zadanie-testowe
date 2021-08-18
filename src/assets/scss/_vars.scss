@@ -37,6 +37,26 @@ $panel-width: 100%;
    }
 }
 
+@mixin box-active {
+      transform: scale(1.2);
+      position: relative;
+      z-index: 2; 
+
+      .map-box__date {
+         transform: translateY(-150px) scale(.5);
+         
+         @media (max-width: 1024px) {
+            transform: translateY(-100px) scale(.5);
+         }
+      }
+
+      img {
+         filter: blur(0px) sepia(30%) grayscale(90%);
+      }
+}
+
+
+// animations
 @keyframes fadeIn {
    from {
       opacity: 0;

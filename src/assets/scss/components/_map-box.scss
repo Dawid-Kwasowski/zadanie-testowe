@@ -1,0 +1,63 @@
+.map-box {
+   max-width: 350px;
+   width: 100%;
+   height: auto;
+   padding: 10px;
+   margin: 20px 5px;
+   border: 1px solid $black;  
+   background: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   // animations
+   animation: fadeIn .5s ease-in 2.2s both;
+   transition: transform .2s ease-in;
+
+   @media (max-width: 1024px) {
+      position: absolute;
+      width: 300px;
+      transform-origin: right;
+      &:nth-child(1) {
+         transform: translateY(10px);
+      }
+      &:nth-child(2) {
+         z-index: 5;
+         transform: translateY(30px);
+      }
+      &:nth-child(3) {
+         transform: translateY(20px);
+      }
+   }
+
+   img {
+      width:90%;
+      margin: 10px;
+      filter: grayscale(90%) sepia(30%) blur(1px);
+   }
+
+   &__date {
+      background: #fff;
+      width: 150px;
+      height: auto;
+      text-align: center;
+      position: absolute;
+      transition: transform .2s ease-in;
+      
+      @media (max-width: 1024px) {
+         transform: translate(75%,-125px) scale(.5);
+      }
+
+      h2 {
+         font-weight: 700;
+      }
+   }
+
+   &:hover {
+      @include box-active;
+   }
+
+   &--active {
+      @include box-active;
+   }
+}
