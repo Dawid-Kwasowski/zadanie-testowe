@@ -130,7 +130,6 @@
   bottom: 0;
   left: 0;
   z-index: 5;
-  padding: 10px 0;
   color: #d6cdcd;
   -webkit-animation: fadeIn .5s ease-in 2.5s both;
           animation: fadeIn .5s ease-in 2.5s both;
@@ -210,6 +209,18 @@
   background: #d6cdcd;
 }
 
+@media (max-width: 1100px) {
+  .maps-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .map-box {
   max-width: 350px;
   width: 100%;
@@ -228,34 +239,12 @@
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  -webkit-animation: fadeIn .5s ease-in 2.2s both;
-          animation: fadeIn .5s ease-in 2.2s both;
+  -webkit-animation: fadeIn 1.5s ease-in both;
+          animation: fadeIn 1.5s ease-in both;
   -webkit-transition: -webkit-transform .2s ease-in;
   transition: -webkit-transform .2s ease-in;
   transition: transform .2s ease-in;
   transition: transform .2s ease-in, -webkit-transform .2s ease-in;
-}
-
-@media (max-width: 1024px) {
-  .map-box {
-    position: absolute;
-    width: 300px;
-    -webkit-transform-origin: right;
-            transform-origin: right;
-  }
-  .map-box:nth-child(1) {
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-  }
-  .map-box:nth-child(2) {
-    z-index: 5;
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
-  }
-  .map-box:nth-child(3) {
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px);
-  }
 }
 
 .map-box img {
@@ -277,13 +266,6 @@
   transition: transform .2s ease-in, -webkit-transform .2s ease-in;
 }
 
-@media (max-width: 1024px) {
-  .map-box__date {
-    -webkit-transform: translate(75%, -125px) scale(0.5);
-            transform: translate(75%, -125px) scale(0.5);
-  }
-}
-
 .map-box__date h2 {
   font-weight: 700;
 }
@@ -292,19 +274,18 @@
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   position: relative;
-  z-index: 2;
+}
+
+@media (max-width: 1200px) {
+  .map-box:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 
 .map-box:hover .map-box__date {
   -webkit-transform: translateY(-150px) scale(0.5);
           transform: translateY(-150px) scale(0.5);
-}
-
-@media (max-width: 1024px) {
-  .map-box:hover .map-box__date {
-    -webkit-transform: translateY(-100px) scale(0.5);
-            transform: translateY(-100px) scale(0.5);
-  }
 }
 
 .map-box:hover img {
@@ -313,22 +294,22 @@
 }
 
 .map-box--active {
+  z-index: 5;
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   position: relative;
-  z-index: 2;
+}
+
+@media (max-width: 1200px) {
+  .map-box--active {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 
 .map-box--active .map-box__date {
   -webkit-transform: translateY(-150px) scale(0.5);
           transform: translateY(-150px) scale(0.5);
-}
-
-@media (max-width: 1024px) {
-  .map-box--active .map-box__date {
-    -webkit-transform: translateY(-100px) scale(0.5);
-            transform: translateY(-100px) scale(0.5);
-  }
 }
 
 .map-box--active img {
@@ -351,11 +332,5 @@
 .header {
   font-weight: 700;
   text-align: center;
-}
-
-.container-fluid {
-  padding: 0;
-  height: 100vh;
-  overflow: hidden;
 }
 /*# sourceMappingURL=main.css.map */

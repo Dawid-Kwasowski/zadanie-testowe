@@ -40,14 +40,11 @@ $panel-width: 100%;
 @mixin box-active {
       transform: scale(1.2);
       position: relative;
-      z-index: 2; 
-
+      @media (max-width:1200px) {
+         transform: scale(1.1);
+      }
       .map-box__date {
          transform: translateY(-150px) scale(.5);
-         
-         @media (max-width: 1024px) {
-            transform: translateY(-100px) scale(.5);
-         }
       }
 
       img {
