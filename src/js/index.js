@@ -4,20 +4,20 @@ import {Maps} from "./map-box.js"
 
 const playBtn = document.querySelector('.player__icon--play-pause')
 const volumeBtn = document.querySelector('.player__icon--volume')
+const exitBtn = document.querySelector('.top-panel__exit-btn')
+const maps = new Maps
+const loader = new Loader
 addEventListener('DOMContentLoaded', () => {
-   const maps = new Maps
-   const loader = new Loader
-
    loader.makeProgress()
    setTimeout(() => {
       maps.createBoxes()
    },2100)
 })
-
-
-playBtn.addEventListener('click', () => {
-   playSong(playBtn)
-})
-volumeBtn.addEventListener('click', () => {
-   volume(volumeBtn)
+// event listners
+playBtn.addEventListener('click', () => playSong(playBtn))
+volumeBtn.addEventListener('click', () => volume(volumeBtn))
+exitBtn.addEventListener('click', () => {
+   const newMap = new Maps()
+   maps.onCloseMap()
+   newMap.createBoxes()
 })

@@ -5,6 +5,9 @@ $bottom: 'bottom';
    position: absolute;
    color: white;
    width: 100%;
+   z-index: 99;
+   top: 0;
+   left: 0;
 }
 
 .slide {

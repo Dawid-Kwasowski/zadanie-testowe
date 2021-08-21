@@ -4,6 +4,7 @@
 @import './components/top-panel';
 @import './components/bottom-panel';
 @import './components/map-box';
+@import './components/zoomed-map';
 :root {
    font-size: 16px;
 }
@@ -18,4 +19,9 @@
 .header {
    font-weight: 700;
    text-align: center;
+   &__title {
+      font-size: 2rem;
+      transition: font-size .5s ease-in;
+      font-weight: 700;
+   }
 }

@@ -1,0 +1,64 @@
+.zoomed-map {
+   width: 100%;
+   height: 90vh;
+   position: relative;
+   transform: scale(0);
+   top: -50px;
+   left: 0;
+   z-index: 1;
+   transition: transform .5s ease-in;
+   img {
+      width: 100%;
+      filter: grayscale(90%) sepia(30%);
+   }
+
+   &--active {
+      transform: scale(1);
+   }
+}
+.dot {
+   position: absolute;
+   animation: pulse 2s infinite;
+   background-color: hsl(0, 75%, 46%);
+   width: 20px;
+   height: 20px;
+   border-radius: 100%;
+   border: 2px solid #fff;
+   cursor: pointer;
+   box-shadow: 0 0 0 0 rgba(205, 29, 29, 0.4);
+
+   &--1 {
+      // Władyswałowo   
+      top: 7vw;
+      left: 10vw;
+   }
+   &--2 {
+      // Puck
+      top: 32vw;
+      left: 10vw;
+   }
+
+   &--3 {
+      // Chałupy
+      top: 19vw;
+      left: 35vw;
+   }
+
+   &--4 {
+      // Jastarnia
+      top: 38vw;
+      left: 60vw;
+   }
+   
+   &--5 {
+      // Rewa
+      top: 64vw;
+      left: 30vw;
+   }
+
+   &--6 {
+      // Hel
+      top: 70vw;
+      left: 90vw;
+   }
+}  

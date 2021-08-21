@@ -8,12 +8,22 @@ export class Maps {
       ]
       // container for maps
       this.mapsContainerEl = document.querySelector('.maps-container')
-      this.mapsTemp = document.querySelector('.maps-temp')
-      // template clone with children = att true 
-      this.cloneTemp = this.mapsTemp.content.cloneNode(true)
-      this.boxes = this.cloneTemp.querySelectorAll('.map-box')
-   }
 
+      this.mapsTemp = document.querySelector('.maps-temp')
+      this.zoomedMapTemp = document.querySelector('.zoomed-map-temp')
+      // template clone with children = att true 
+      this.boxTemp = this.mapsTemp.content.cloneNode(true)
+      this.zoomedBoxTemp = this.zoomedMapTemp.content.cloneNode(true)
+      
+      this.boxes = this.boxTemp.querySelectorAll('.map-box')
+      // 
+      this.zoomedBox = this.zoomedBoxTemp.querySelector('.zoomed-map')
+      // 
+      this.headerEl = document.querySelector('.top-panel__date')
+      this.headerTitleEl = document.querySelector('.header__title')
+      this.exitBtn = document.querySelector('.top-panel__exit-btn')
+   }
+   // Methods
    createBoxes() {
       // loop which are checking initial active state if statement returns true then add active modifier
       this.boxes.forEach((box,index) => {
@@ -21,9 +31,10 @@ export class Maps {
             box.classList.add('map-box--active')
          }
          box.querySelector('.map-box__date-year').textContent = this.maps[index].date
-         box.addEventListener('mouseenter', () => this.swithActivity(this.boxes,box))
+         box.addEventListener('mouseenter', () =>  this.swithActivity(this.boxes,box))
+         box.addEventListener('click', () => this.onOpenMap(this.maps[index]))
       })
-      this.mapsContainerEl.append(this.cloneTemp)
+      this.mapsContainerEl.append(this.boxTemp)
    }
    // remove modifier except hovered element
    swithActivity(boxes, box) {
@@ -31,5 +42,38 @@ export class Maps {
         box.classList.remove('map-box--active')
      })
      box.classList.add('map-box--active')
+   }
+
+   onOpenMap(mapData) {
+      // update title at top panel
+      this.headerTitleEl.style.fontSize = "1.1rem"
+      this.headerEl.classList.add('top-panel__date--slide-top')
+      this.headerEl.innerHTML =  `
+         <div class="top-panel__date">
+         <div class="top-panel__date-year">ROK</div>
+            ${mapData.date}
+         </div>
+      `
+      // display X btn
+      this.exitBtn.classList.add('top-panel__exit-btn--active')
+
+      this.boxes.forEach(box => {
+         box.classList.add('map-box--shrinked')
+      })
+      setTimeout(() => {
+         // clear previous template then add new one 
+         this.mapsContainerEl.innerHTML = ""
+         this.mapsContainerEl.append(this.zoomedBoxTemp)
+      },1000)
+      setTimeout(() => {
+         this.zoomedBox.classList.add('zoomed-map--active')
+      },1000)
+   }
+
+   onCloseMap() {
+      this.mapsContainerEl.innerHTML = ""
+      this.exitBtn.classList.remove('top-panel__exit-btn--active')
+      this.headerTitleEl.style.fontSize = "2rem"
+      this.headerEl.innerHTML = `<div class="top-panel__date"></div>`
    }
 }
