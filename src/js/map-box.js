@@ -1,3 +1,4 @@
+import { carrousel, onCloseGallery } from "./carousel.js"
 export class Maps {
    constructor() {
       // initial data 
@@ -14,7 +15,6 @@ export class Maps {
       // template clone with children = att true 
       this.boxTemp = this.mapsTemp.content.cloneNode(true)
       this.zoomedBoxTemp = this.zoomedMapTemp.content.cloneNode(true)
-      
       this.boxes = this.boxTemp.querySelectorAll('.map-box')
       // 
       this.zoomedBox = this.zoomedBoxTemp.querySelector('.zoomed-map')
@@ -64,6 +64,17 @@ export class Maps {
          // clear previous template then add new one 
          this.mapsContainerEl.innerHTML = ""
          this.mapsContainerEl.append(this.zoomedBoxTemp)
+         // carrousel plugin
+         let dots = this.mapsContainerEl.querySelectorAll('.dot')
+         const gallery = this.mapsContainerEl.querySelector('.gallery')
+
+         dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+               gallery.classList.add('gallery--active')
+               carrousel(gallery)
+            })
+         })
+         
       },1000)
       setTimeout(() => {
          this.zoomedBox.classList.add('zoomed-map--active')

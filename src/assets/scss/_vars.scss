@@ -1,9 +1,11 @@
 // primary colors
 // background
 $black: hsl(0, 17%, 2%);
-
+// dots 
+$red: hsl(0, 75%, 46%);
+$desaturated-red: rgba(205, 29, 29, 0.4);
 // text
-$white: hsl(0, 10%, 82%);
+$white: hsl(0, 0%, 100%);
 
 // measurement
 $panel-height: 80px;
@@ -77,14 +79,14 @@ $panel-width: 100%;
 @keyframes pulse {
    0% {
       transform: scale(.80);
-      box-shadow: 0 0 0 0 rgba(205, 29, 29, 0.2)
+      box-shadow: 0 0 0 0 $desaturated-red;
    }
    50% {
       transform: scale(1);
-      box-shadow: 0 0 0 10px rgba(205, 29, 29, 0.2)
+      box-shadow: 0 0 0 10px $desaturated-red;
    }
    100% {
       transform: scale(.80);
-      box-shadow: 0 0 0 0 rgba(205, 29, 29, 0.2)
+      box-shadow: 0 0 0 0 $desaturated-red;
    }
 }

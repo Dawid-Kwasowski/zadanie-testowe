@@ -1,7 +1,7 @@
 import { Loader } from "./loader.js"
 import {playSong, volume} from "./player.js"
 import {Maps} from "./map-box.js"
-
+import { onCloseGallery } from "./carousel.js"
 const playBtn = document.querySelector('.player__icon--play-pause')
 const volumeBtn = document.querySelector('.player__icon--volume')
 const exitBtn = document.querySelector('.top-panel__exit-btn')
@@ -17,7 +17,13 @@ addEventListener('DOMContentLoaded', () => {
 playBtn.addEventListener('click', () => playSong(playBtn))
 volumeBtn.addEventListener('click', () => volume(volumeBtn))
 exitBtn.addEventListener('click', () => {
-   const newMap = new Maps()
-   maps.onCloseMap()
-   newMap.createBoxes()
+   if(document.querySelector('.gallery--active')) {
+      onCloseGallery(document.querySelector('.gallery'))
+   }
+   else {
+      const newMap = new Maps()
+      maps.onCloseMap()
+      newMap.createBoxes()
+   }
 })
+   

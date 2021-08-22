@@ -1,8 +1,9 @@
 let isPlaying = false
 let isMuted = false
+
 const playSong = (hook) => {
    if(isPlaying) {
-     hook.src = '../src/images/pause-fill.svg' 
+     hook.src = '../src/images/pause-fill.svg'
    }
    else {
       hook.src = '../src/images/play-fill.svg'
