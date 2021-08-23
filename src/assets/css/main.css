@@ -297,8 +297,11 @@
 }
 
 .navigation__link {
-  text-decoration: none;
   color: white;
+}
+
+.navigation__link:hover {
+  color: inherit;
 }
 
 .player {
@@ -327,7 +330,6 @@
 }
 
 .player__tracker-fill {
-  width: 30%;
   border-radius: 10px;
   background: white;
 }
@@ -584,8 +586,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: fadeIn .2s ease-in backwards;
-          animation: fadeIn .2s ease-in backwards;
+  -webkit-animation: fadeIn .2s ease-in both;
+          animation: fadeIn .2s ease-in both;
 }
 
 :root {

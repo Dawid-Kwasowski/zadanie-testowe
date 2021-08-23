@@ -36,9 +36,11 @@
       margin: 0 10px;
    }
    &__link {
-      
-      text-decoration: none;
       color: $white;
+
+      &:hover {
+         color: inherit;
+      }
    }
 }
 
@@ -59,7 +61,6 @@
    }
 
    &__tracker-fill {
-      width: 30%;
       border-radius: 10px;
       background: $white;
    }
