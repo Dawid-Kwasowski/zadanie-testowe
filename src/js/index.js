@@ -18,7 +18,7 @@ playBtn.addEventListener('click', () => playSong(playBtn))
 volumeBtn.addEventListener('click', () => volume(volumeBtn))
 exitBtn.addEventListener('click', () => {
    if(document.querySelector('.gallery--active')) {
-      onCloseGallery(document.querySelector('.gallery'))
+      onCloseGallery(document.querySelector('.gallery--active'))
    }
    else {
       const newMap = new Maps()

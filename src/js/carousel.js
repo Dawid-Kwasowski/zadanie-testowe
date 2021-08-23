@@ -30,5 +30,4 @@ export const carrousel = gallery => $(gallery).slick({
    ]
 })
 
-export const onCloseGallery = gallery => $(gallery).removeClass('gallery--active')
-   
+export const onCloseGallery = gallery => $(gallery).toggleClass('gallery--active')
